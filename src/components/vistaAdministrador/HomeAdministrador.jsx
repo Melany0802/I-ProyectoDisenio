@@ -44,7 +44,9 @@ function HomeAdministrador() {
                                                 cursor-pointer transition-all"
                                     value="Eliminar Categorías"
                                 />
+                                
                             </div>
+                            
                         </div>
                         {/* Contenedor para la imagen a la derecha */}
                         <div className="flex justify-end w-full">

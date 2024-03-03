@@ -2,8 +2,8 @@ import Login from "./components/Login";
 import Registro from "./components/Registro";
 import HomeAdministrador from "./components/vistaAdministrador/HomeAdministrador";
 import VisualizarCategorias from "./components/vistaAdministrador/VisualizarCategorias";
-import HomeCliente from "./components/VistaCliente/HomeCliente";
 
+import Principal from "./components/VistaCliente/Principal";
 
 import { Toaster } from "react-hot-toast"; // Importa el componente Toaster
 
@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/sing-in" element={<Registro />} />
-        <Route path="/on-line-shop" element={<HomeCliente />} />
+        <Route path="/on-line-shop" element={<Principal />} />
         <Route path="/view-administrator" element={<HomeAdministrador />} />
         <Route path="/view-categories" element={<VisualizarCategorias />} />
         
