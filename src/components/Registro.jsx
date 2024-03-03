@@ -174,7 +174,7 @@ function Registro() {
         </div>
       </div>
 
-      <Toaster position="top-right" reverseOrder={true} />
+
 
     </div>
   )
