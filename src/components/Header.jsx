@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import toast, { Toaster } from "react-hot-toast";
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false); // Ya lo tienes definido

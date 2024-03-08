@@ -25,24 +25,26 @@ function HomeAdministrador() {
                                     value="Visualizar Categorías"
                                 />
                                 <input
+                                
+                                    type="submit"
+                                    className="bg-rose-400 uppercase text-white font-bold w-full p-3 mt-10 hover:bg-rose-500 
+                                                cursor-pointer transition-all"
+                                    value="Visualizar Usuarios"
+                                />
+                            </div>
+                            <div className="my-40">
+                                <input
+                                    onClick={() => navigate('/add-categories')}
                                     type="submit"
                                     className="bg-rose-400 uppercase text-white font-bold w-full p-3 mt-10 hover:bg-rose-500 
                                                 cursor-pointer transition-all"
                                     value="Agregar Categorías"
                                 />
-                            </div>
-                            <div className="my-40">
                                 <input
                                     type="submit"
                                     className="bg-rose-400 uppercase text-white font-bold w-full p-3 mt-10 hover:bg-rose-500 
                                                 cursor-pointer transition-all"
-                                    value="Editar Categorías"
-                                />
-                                <input
-                                    type="submit"
-                                    className="bg-rose-400 uppercase text-white font-bold w-full p-3 mt-10 hover:bg-rose-500 
-                                                cursor-pointer transition-all"
-                                    value="Eliminar Categorías"
+                                    value="Modificar Usuarios"
                                 />
                                 
                             </div>

@@ -3,6 +3,7 @@ import { useState } from "react"
 import toast, { Toaster } from "react-hot-toast";
 
 
+
 function Registro() {
   const navigate = useNavigate()
 
