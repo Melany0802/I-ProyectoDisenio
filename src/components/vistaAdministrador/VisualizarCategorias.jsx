@@ -40,6 +40,7 @@ function VisualizarCategorias() {
             </div>
             <div className="my-10 flex justify-center items-center gap-10 ">
                 <input
+                onClick={() => navigate('/update-categories')}
                     type="submit"
                     className="bg-rose-400 uppercase text-white font-bold  p-3 rounded hover:bg-rose-500 
                                                 cursor-pointer transition-all"

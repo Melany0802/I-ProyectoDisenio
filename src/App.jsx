@@ -10,6 +10,8 @@ import EliminarCategoria from "./components/vistaAdministrador/EliminarCategoria
 import { Toaster } from "react-hot-toast"; // Importa el componente Toaster
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import VisualizarUsuarios from "./components/vistaAdministrador/VisualizarUsuarios";
+import UpdateCategories from "./components/vistaAdministrador/UpdateCategories";
 
 
 function App() {
@@ -24,7 +26,9 @@ function App() {
         <Route path="/view-categories" element={<VisualizarCategorias />} />
         <Route path="/add-categories" element={<AgregarCategorias />} />
         <Route path="/delete-categories" element={<EliminarCategoria />} />
-        
+        <Route path="/view-users" element={<VisualizarUsuarios/>} />
+        <Route path="/update-categories" element={<UpdateCategories/>} />
+        <Route path="*" element={<h1>Not Found</h1>} />
 
       </Routes>
     </Router>
