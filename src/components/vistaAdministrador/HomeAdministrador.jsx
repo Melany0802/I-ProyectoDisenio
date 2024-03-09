@@ -25,7 +25,7 @@ function HomeAdministrador() {
                                     value="Visualizar Categorías"
                                 />
                                 <input
-                                
+                                    onClick={() => navigate('/view-users')}
                                     type="submit"
                                     className="bg-rose-400 uppercase text-white font-bold w-full p-3 mt-10 hover:bg-rose-500 
                                                 cursor-pointer transition-all"
