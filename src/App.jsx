@@ -6,7 +6,8 @@ import AgregarCategorias from "./components/vistaAdministrador/AgregarCategorias
 import Principal from "./components/VistaCliente/Principal";
 import EliminarCategoria from "./components/vistaAdministrador/EliminarCategoria";
 import UpdateUsers from "./components/vistaAdministrador/UpdateUsers";
-
+import Carrito from "./components/VistaCliente/Carrito";
+import { CarritoProvider } from './components/CarritoContext'
 
 import { Toaster } from "react-hot-toast"; // Importa el componente Toaster
 
@@ -17,23 +18,26 @@ import UpdateCategories from "./components/vistaAdministrador/UpdateCategories";
 
 function App() {
   return (
-    <Router>
-      <Toaster position="top-right" reverseOrder={true} /> {/* Agrega el componente Toaster aquí */}
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/sing-in" element={<Registro />} />
-        <Route path="/on-line-shop" element={<Principal />} />
-        <Route path="/view-administrator" element={<HomeAdministrador />} />
-        <Route path="/view-categories" element={<VisualizarCategorias />} />
-        <Route path="/add-categories" element={<AgregarCategorias />} />
-        <Route path="/delete-categories" element={<EliminarCategoria />} />
-        <Route path="/view-users" element={<VisualizarUsuarios/>} />
-        <Route path="/update-categories" element={<UpdateCategories/>} />
-        <Route path="/update-users" element={<UpdateUsers/>} />
-        <Route path="*" element={<h1>Not Found</h1>} />
+    <CarritoProvider>
+      <Router>
+        <Toaster position="top-right" reverseOrder={true} /> {/* Agrega el componente Toaster aquí */}
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/sing-in" element={<Registro />} />
+          <Route path="/on-line-shop" element={<Principal />} />
+          <Route path="/view-administrator" element={<HomeAdministrador />} />
+          <Route path="/view-categories" element={<VisualizarCategorias />} />
+          <Route path="/add-categories" element={<AgregarCategorias />} />
+          <Route path="/delete-categories" element={<EliminarCategoria />} />
+          <Route path="/view-users" element={<VisualizarUsuarios />} />
+          <Route path="/update-categories" element={<UpdateCategories />} />
+          <Route path="/update-users" element={<UpdateUsers />} />
+          <Route path="/carrito" element={<Carrito />} />
+          <Route path="*" element={<h1>Not Found</h1>} />
 
-      </Routes>
-    </Router>
+        </Routes>
+      </Router>
+    </CarritoProvider>
   )
 }
 

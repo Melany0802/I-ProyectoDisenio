@@ -2,14 +2,20 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import Header from "../Header";
+import { useCarrito } from "../CarritoContext";
 
 function Principal() {
     const [index, setIndex] = useState(0);
     const limit = 12;
-    const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [searchTerm, setSearchTerm] = useState(""); // Estado para almacenar el término de búsqueda
+    const { carrito, agregarAlCarrito } = useCarrito([]);
+    const navigate = useNavigate();
+
+
+
+
 
     const handleProductClick = (product) => {
         setSelectedProduct(product);
@@ -54,8 +60,8 @@ function Principal() {
         try {
             const response = await fetch(
                 `https://api.escuelajs.co/api/v1/products?title=${term}`
-                
-            
+
+
             );
             const data = await response.json();
             setProducts(data);
@@ -64,15 +70,16 @@ function Principal() {
             toast.error("Hubo un error al buscar productos");
         }
     };
-    
-    
+
+
+
 
     return (
         <div>
             <div className="">
                 <Header />
             </div>
-            
+
             {/* Barra de búsqueda */}
             <div className="flex justify-center mt-5">
                 <input
@@ -82,8 +89,8 @@ function Principal() {
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="px-3 py-2 border border-gray-300 rounded-lg"
                 />
-            </div>
 
+            </div>
             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
                 {products.map((product) => (
                     <li key={product.id} className="p-4">
@@ -95,6 +102,9 @@ function Principal() {
                             />
                             <h2 className="text-xl font-bold mb-2">{product.title}</h2>
                             <p className="text-gray-700 mb-2">${product.price.toFixed(2)}</p>
+                            <button onClick={() => agregarAlCarrito([...carrito, product])} className="bg-rose-400 uppercase text-white font-bold p-2 rounded hover:bg-rose-300 cursor-pointer transition-all">
+                                Agregar al carrito
+                            </button>
                         </div>
                     </li>
                 ))}
